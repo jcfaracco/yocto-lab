@@ -58,7 +58,17 @@ Para verificar que tudo ocorreu corretamente, verifique as *layers*.
     
 Por último, lembre-se de alterar a váriável `MACHINE` para o novo *hardware*. Para verificar quais estão disponíveis, você pode consultar as receitas da BSP.
 
-    $ ls ../meta-raspberrypi/conf/machine/
+    $ ls ../meta-raspberrypi/conf/machine/ | grep conf
+    raspberrypi0.conf
+    raspberrypi0-wifi.conf
+    raspberrypi2.conf
+    raspberrypi3-64.conf
+    raspberrypi3.conf
+    raspberrypi4-64.conf
+    raspberrypi4.conf
+    raspberrypi-cm3.conf
+    raspberrypi-cm.conf
+    raspberrypi.conf
     
 Um exemplo seria `MACHINE ??= "raspberrypi3-64"` sem o `.conf`. Caso você ainda queira criar uma imagem para ser diretamente utilizada em um cartão de memória ou HD. Basta alterar o tipo também em `conf/local.conf`. Utilize o valor `rpi-image`.
 
