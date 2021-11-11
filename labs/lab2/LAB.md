@@ -9,7 +9,7 @@ Primeiramente, vamos listar quais *layers* estão disponíveis no nosso *build*.
 
     $ cd yocto/
     $ source oe-init-build-env
-    $ $ bitbake-layers show-layers
+    $ bitbake-layers show-layers
     layer                 path                                      priority
     ==========================================================================
     meta                  /home/poky/yocto/meta                     5
