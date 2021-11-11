@@ -48,7 +48,7 @@ Na nossa primeira receita definida em `sl_5.02.bb`, percebam as variáveis `SRC_
     DESCRIPTION = "SL(1): Cure your bad habit of mistyping"
     SECTION = "console/utils"
     LICENSE="GPLv3"
-    LIC_FILES_CHKSUM = "file://git/LICENSE;md5=74e9dd589a0ab212a9002b15ef2b82f0"
+    LIC_FILES_CHKSUM = "file://LICENSE;md5=74e9dd589a0ab212a9002b15ef2b82f0"
     
     # sl depends on ncurses package
     DEPENDS = "ncurses"
@@ -56,13 +56,13 @@ Na nossa primeira receita definida em `sl_5.02.bb`, percebam as variáveis `SRC_
     SRCREV = "923e7d7ebc5c1f009755bdeb789ac25658ccce03"
     SRC_URI = "git://github.com/mtoyoda/sl.git"
     
-    S = "${WORKDIR}"
+    S = "${WORKDIR}/git"
     
     TARGET_CC_ARCH += "${LDFLAGS}"
     
     do_compile() {
              # make is broken
-             ${CC} ${CFLAGS} -o sl ${WORKDIR}/git/sl.c ${LDFLAGS} -I${STAGING_DIR_TARGET}/${libdir}/ncurses/ -lncurses
+             ${CC} ${CFLAGS} -o sl ${S}/sl.c ${LDFLAGS} -I${STAGING_DIR_TARGET}/${libdir}/ncurses/ -lncurses
     }
     
     do_install() {
