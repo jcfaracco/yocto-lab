@@ -7,11 +7,11 @@ No laboratório 4, iremos criar um teste simples utilizando *OpenEmbedded selfte
 
 Ainda utilizando a *layer* criada no laboratório 2. Para isso, crie os diretórios necessários.
 
-    $ mkdir -p ../meta-sel/lib/oeqa/
+    $ mkdir -p ../meta-sel/lib/oeqa/runtime/cases/
 
 Vamos criar o arquivo de teste da aplicação `sl`.
 
-    $ vim ../meta-sel/lib/oeqa/sl.py
+    $ vim ../meta-sel/lib/oeqa/runtime/cases/sl.py
     
 E adicionar o conteúdo.
 
@@ -34,11 +34,12 @@ class SLTest(OERuntimeTestCase):
         self.assertEqual(int(status), 0, msg=msg)
 ```
             
-Agora, vamos verificar se nosso teste está disponível.
+Vamos incluir o teste de imagem como parte do processo de *build*.
 
-
+    IMAGE_CLASSES += "testimage"
+    
 Por fim, vamos executá-lo.
 
-    $ oe-selftest --run-tests-by name SLTest
+    $ bitbake core-image-minimal -c testimage
     
 Sucesso ou falha?
