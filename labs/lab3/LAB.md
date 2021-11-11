@@ -5,7 +5,7 @@
 
 No laboratório 3, iremos aprender como criar um *patch* para um projeto e como utilizá-lo em nosso kernel padrão. Para isso, iremos rever alguns comandos básicos de Git durante as etapas.
 
-Utilizando tudo o que foi feito nos laboratórios anteriores, vamos utilizar a versão do kernel que está em sua máquina proveniente do download do build. Os códigos fontes encontram-se dentro da pasta temporária. No caso do kernel, o caminho é o `tmp/work-shared/qemux86–64/kernel-source`.
+Utilizando tudo o que foi feito nos laboratórios anteriores, vamos utilizar a versão do kernel que está em sua máquina proveniente do download do *build*. Os códigos fontes encontram-se dentro da pasta temporária. No caso do kernel, o caminho é o `tmp/work-shared/qemux86–64/kernel-source`.
 
     $ cd tmp/work-shared/qemux86–64/kernel-source
 
@@ -60,7 +60,7 @@ A receita requer apenas a inclusão do patch, bem como a importação da receita
     
     SRC_URI += "file://0001-x86_64-simple-change-to-test-Yocto-patch.patch"
     
-Hora de executar um novo build.
+Hora de executar um novo *build*.
 
     $ bitbake core-image-minimal
     

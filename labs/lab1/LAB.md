@@ -3,7 +3,7 @@
 
 ### Configure um build simples
 
-O objetivo desse laboratório é entender um pouco como é possível gerar um build simples utilizando Yocto. Como fazer o download dos códigos fonte e projeto, bem como os comandos básicos.
+O objetivo desse laboratório é entender um pouco como é possível gerar um *build* simples utilizando Yocto. Como fazer o download dos códigos fonte e projeto, bem como os comandos básicos.
 
 Para isso não utilizaremos hardware real. Faremos uma demonstração simples utilizando QEMU x86_64. É possível utilizar uma arquitetura ARM 64 bits de emulação? Sim, porém levaria mais tempo que o comum devido a compilação cruzada e bibliotecas dependentes.
 
@@ -18,17 +18,17 @@ Feito o download, carregue todo o ferramental do Poky com:
     
 Aqui você verá algumas instruções de arquivos faltantes. Não se preocupa, ele criará automaticamente dos modelos predefinidos. Ainda aqui, ele trocará o diretório corrente para `yocto/build`. Note isso!
 
-Caso você precise fazer alguma alteração local do build, utilize o arquivo `conf/local.conf`. Abra ele utilizando algum editor de sua preferência. Aqui utilizarei o **vim**.
+Caso você precise fazer alguma alteração local do *build*, utilize o arquivo `conf/local.conf`. Abra ele utilizando algum editor de sua preferência. Aqui utilizarei o **vim**.
 
     $ vim conf/local.conf
     
-Notem algumas variáveis interessantes como o `MACHINE`, o `DISTRO`. Nesse ponto seria bastante interessante você configurar a quantidade de CPU cores utilizados pelo build. Ainda com o arquivo aberto, adicione ou altere as variáveis:
+Notem algumas variáveis interessantes como o `MACHINE`, o `DISTRO`. Nesse ponto seria bastante interessante você configurar a quantidade de CPU cores utilizados pelo processo. Ainda com o arquivo aberto, adicione ou altere as variáveis:
 
     # 5 threads no processo de build e compitação com 4.
     BB_NUMBER_THREADS = "5"
     PARALLEL_MAKE = "-j4"
 
-Agora já podemos iniciar o build da nossa imagem. Utilizaremos a receita `core-image-minimal` que criará uma imagem minima de boot.
+Agora já podemos iniciar o *build* da nossa imagem. Utilizaremos a receita `core-image-minimal` que criará uma imagem minima de boot.
 
     $ bitbake core-image-minimal
     
@@ -40,7 +40,7 @@ Se você estiver usando a maquina física ou uma máquina virtual, não há a ne
 
 Pronto! Até aqui você criou uma imagem mínima utilizando um kernel mínimo e poucas bibliotecas.
 
-Extra: caso você ainda queira gerar uma imagem mais complexa ou utilizando QEMU ARM, basta trocar a variável `MACHINE` e o emulador para `qemuarm`. Além disso, caso você queira gerar uma imagem para algum hardware específico como uma *Raspberry Pi*. Você pode adicionar a BSP layer.
+Extra: caso você ainda queira gerar uma imagem mais complexa ou utilizando QEMU ARM, basta trocar a variável `MACHINE` e o emulador para `qemuarm`. Além disso, caso você queira gerar uma imagem para algum hardware específico como uma *Raspberry Pi*. Você pode adicionar a BSP *layer*.
 
     # Ainda em yocto/build
     $ git clone -b hardknott git://git.yoctoproject.org/meta-raspberrypi ../meta-raspberrypi

@@ -3,9 +3,9 @@
 
 ## Criando sua própria layer com seu app
 
-Nesse segundo laboratório, iremos criar uma *layer* e modificá-la para incluir nosso aplicativo dentro do build para QEMU. Nesse exmeplo utilizaremos uma aplicação bem simples chamada `sl`.
+Nesse segundo laboratório, iremos criar uma *layer* e modificá-la para incluir nosso aplicativo dentro do *build* para QEMU. Nesse exmeplo utilizaremos uma aplicação bem simples chamada `sl`.
 
-Primeiramente, vamos listar quais *layers* estão disponíveis no nosso build.
+Primeiramente, vamos listar quais *layers* estão disponíveis no nosso *build*.
 
     $ cd yocto/
     $ source oe-init-build-env
@@ -16,7 +16,7 @@ Primeiramente, vamos listar quais *layers* estão disponíveis no nosso build.
     meta-poky             /home/poky/yocto/meta-poky                5
     meta-yocto-bsp        /home/poky/yocto/meta-yocto-bsp           5
     
-**Opcional:** se vc adicionou a *layer* extra do laboratório anterior, lembre-se de reverter as alterações feitas para Raspberry Pi se for seu caso. Para remover a layer existe também um comando específico.
+**Opcional:** se vc adicionou a *layer* extra do laboratório anterior, lembre-se de reverter as alterações feitas para *Raspberry Pi* se for seu caso. Para remover a *layer* existe também um comando específico.
 
     $ bitbake-layers remove-layer meta-raspberrypi
     
