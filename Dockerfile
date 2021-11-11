@@ -27,5 +27,9 @@ RUN echo 'poky:poky' | chpasswd
 
 RUN apt-get clean
 
+# QEMU hacks if you are using a tun device
+# RUN touch /tmp/qemu-tap-locks/tap0.skip
+# RUN sudo /home/poky/yocto/scripts/runqemu-gen-tapdevs 1000 1000 4 tmp/sysroots-components/x86_64/qemu-helper-native/usr/bin
+
 USER poky
 WORKDIR /home/poky
