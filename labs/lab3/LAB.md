@@ -7,7 +7,7 @@ No laboratório 3, iremos aprender como criar um *patch* para um projeto e como 
 
 Utilizando tudo o que foi feito nos laboratórios anteriores, vamos utilizar a versão do kernel que está em sua máquina proveniente do download do *build*. Os códigos fontes encontram-se dentro da pasta temporária. No caso do kernel, o caminho é o `tmp/work-shared/qemux86–64/kernel-source`.
 
-    $ cd tmp/work-shared/qemux86–64/kernel-source
+    $ cd tmp/work-shared/qemux86-64/kernel-source
 
 Verifique a branch corrente e mude para uma nova a partir dela. **Obs:** verifique a versão do kernel antes com `make kernelversion`.
 
